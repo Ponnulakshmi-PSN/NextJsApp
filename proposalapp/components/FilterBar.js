@@ -19,14 +19,14 @@ export default function FilterBar({ setActivities, setCurrentPage, fetchActiviti
   };
 
   return (
-    <div className="flex items-center justify-between mb-8 bg-white p-4 rounded-lg shadow-md border border-[#a0a0a0]">
+    <div className="flex items-center justify-between mb-8 bg-white filterstyle p-4 rounded-lg shadow-md border border-[#a0a0a0]">
       <div className="relative w-full max-w-xs">
         <input
           type="text"
+          placeholder="Search for Institutes eg. IIT Madras"
+          className="w-[500px] border border-[#a0a0a0] rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search for Institutes eg. IIT Madras"
-          className="w-full border border-[#a0a0a0] rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500"
         />
         <FaSearch className="absolute left-3 top-3 text-gray-500" />
       </div>

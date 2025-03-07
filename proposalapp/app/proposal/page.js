@@ -65,8 +65,8 @@ export default function ProposalPage() {
   const visibleActivities = activities.slice(startIndex, endIndex); 
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <h1 className="text-3xl font-bold text-left mb-8 text-orange-500">Proposals</h1>
+<div className="min-h-screen bg-gray-50 p-8 mystyle">
+<h1 className="text-3xl font-bold text-left mb-8 text-orange-500">Proposals</h1>
       <FilterBar 
         setActivities={setActivities} 
         setCurrentPage={setCurrentPage} 
@@ -93,5 +93,6 @@ export default function ProposalPage() {
         </>
       )}
     </div>
+
   );
 }

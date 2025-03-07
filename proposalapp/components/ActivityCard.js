@@ -1,8 +1,10 @@
+import React from 'react';
+
 export default function ActivityCard({ activity: { name, description, status, weblink } }) {
   return (
-    <div className="flex bg-white rounded-2xl border border-[#a0a0a0] shadow-md hover:shadow-lg transition p-4">
-      <div className="w-24 h-24 bg-gray-300 rounded-lg flex-shrink-0"></div>
-      <div className="ml-4 flex flex-col justify-between flex-grow">
+    <div className="bg-eee0c5 rounded-2xl border border-gray-400 shadow-md hover:shadow-lg transition p-4 flex">
+      <div className="w-32 h-full bg-[oklch(0.36_0_0)]"></div>
+      <div className="flex-1 flex flex-col justify-between ml-4">
         <div>
           <div className="flex space-x-2 mb-2">
             <span className="bg-gray-200 text-xs px-2 py-1 rounded-lg">Domain Name</span>
@@ -31,6 +33,18 @@ export default function ActivityCard({ activity: { name, description, status, we
           </span>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function ActivityGrid({ activities }) {
+  if (!activities || !activities.length) return <p>No activities available.</p>;
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {activities.map(activity => (
+        <ActivityCard key={activity.id} activity={activity} />
+      ))}
     </div>
   );
 }
